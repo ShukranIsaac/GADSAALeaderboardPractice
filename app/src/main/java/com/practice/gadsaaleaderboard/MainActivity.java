@@ -1,12 +1,11 @@
 package com.practice.gadsaaleaderboard;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
+import com.practice.gadsaaleaderboard.ui.common.BaseActivity;
 import com.practice.gadsaaleaderboard.ui.main.MainFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,4 +17,5 @@ public class MainActivity extends AppCompatActivity {
                     .commitNow();
         }
     }
+
 }
