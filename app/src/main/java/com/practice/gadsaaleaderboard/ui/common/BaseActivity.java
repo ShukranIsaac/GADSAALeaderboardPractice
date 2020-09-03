@@ -20,11 +20,14 @@ import androidx.core.content.ContextCompat;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
 
-public abstract class BaseActivity extends AppCompatActivity implements BaseContracts.View {
+public class BaseActivity extends AppCompatActivity implements BaseContracts.View {
     private BehaviorSubject<Status> lifeCycleObservable = BehaviorSubject.create();
     private boolean isLoading = false;
 
-    public enum Status { ON_PAUSE, ON_RESUME }
+    public enum Status {
+        ON_PAUSE,
+        ON_RESUME
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -129,9 +132,8 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseCont
     }
 
     @Override
-    public AlertDialog showInfoDialog(String title, String message,
-                                      String positiveButtonText, String negativeButtonText,
-                                      OnDialogClickListener clickListener) {
+    public AlertDialog showInfoDialog(String title, String message, String positiveButtonText,
+                                      String negativeButtonText, OnDialogClickListener clickListener) {
         return null;
     }
 }

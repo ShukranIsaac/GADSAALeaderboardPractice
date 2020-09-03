@@ -1,5 +1,6 @@
 package com.practice.gadsaaleaderboard.ui;
 
+import com.practice.gadsaaleaderboard.ui.main.LeadersViewModel;
 import com.practice.gadsaaleaderboard.ui.main.MainViewModel;
 
 import androidx.annotation.NonNull;
@@ -16,7 +17,9 @@ public class ViewModelFactory implements BaseViewModelFactory {
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if (modelClass.isAssignableFrom(MainViewModel.class)) {
             return (T) new MainViewModel();
-        } else {
+        } else if (modelClass.isAssignableFrom(LeadersViewModel.class)) {
+            return (T) new LeadersViewModel();
+        }else {
             throw new IllegalArgumentException("Unknown ViewModel class");
         }
     }

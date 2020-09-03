@@ -22,8 +22,7 @@ public class BaseContracts {
 
         void showInfoDialog(String title, String message);
 
-        AlertDialog showInfoDialog(String title, String message,
-                                   OnDialogClickListener dialogListener);
+        AlertDialog showInfoDialog(String title, String message, OnDialogClickListener dialogListener);
 
         void showToast(String message);
 
