@@ -12,8 +12,8 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 import timber.log.Timber;
 
 /**
- * Generic Singleton service class for Api calls
- * using Retrofit, RxJava & RxAndroid
+ * Singleton service class for making Api calls
+ * using Retrofit
  *
  * @author Isaac S. Mwakabira(imwakabira@cc.ac.mw)
  */
@@ -31,12 +31,19 @@ public class Api {
     }
 
     public <T> T create(Class<T> clazz) {
+        return getRetrofitBuilder().baseUrl(Constant.DEFAULT_BASE_URL).build().create(clazz);
+    }
+
+    public <T> T create(String url, Class<T> clazz) {
+        return getRetrofitBuilder().baseUrl(url).build().create(clazz);
+    }
+
+    private Retrofit.Builder getRetrofitBuilder() {
         return new Retrofit.Builder()
-                .baseUrl(Constant.DEFAULT_BASE_URL)
-                .addConverterFactory(JacksonConverterFactory.create(ObjectMapperFactory.objectMapper()))
+                .addConverterFactory(JacksonConverterFactory
+                        .create(ObjectMapperFactory.objectMapper()))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .client(provideOkHttpClient(authenticate())).validateEagerly(true)
-                .build().create(clazz);
+                .client(provideOkHttpClient(authenticate())).validateEagerly(true);
     }
 
     /**
