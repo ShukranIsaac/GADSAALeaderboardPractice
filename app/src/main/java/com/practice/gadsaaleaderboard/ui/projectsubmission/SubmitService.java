@@ -1,5 +1,7 @@
-package com.practice.gadsaaleaderboard;
+package com.practice.gadsaaleaderboard.ui.projectsubmission;
 
+import io.reactivex.Observable;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -13,7 +15,7 @@ import retrofit2.http.POST;
 public interface SubmitService {
     @POST("1FAIpQLSf9d1TcNU6zc6KR8bSEM41Z1g1zl35cwZr2xyjIhaMAz8WChQ/formResponse")
     @FormUrlEncoded
-    Call<Void> merchantRest(
+    Observable<ResponseBody> merchantRest(
             @Field("entry.1659819444") String firstName,
             @Field("entry.472564179") String lastName,
             @Field("entry.285899941") String personalFone,

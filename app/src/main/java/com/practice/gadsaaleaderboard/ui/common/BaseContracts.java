@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityOptionsCompat;
 
-public class BaseContracts {
+public final class BaseContracts {
     public interface View {
         Context getContext();
 

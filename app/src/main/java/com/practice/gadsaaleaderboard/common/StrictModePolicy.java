@@ -17,7 +17,7 @@ public class StrictModePolicy {
     public static void getThreadPolicy() {
         StrictMode.setThreadPolicy(new StrictMode
                 .ThreadPolicy.Builder()
-                .detectDiskReads()
+//                .detectDiskReads()
                 .detectDiskWrites()
                 .detectNetwork()   // or .detectAll() for all detectable problems
                 .penaltyLog()

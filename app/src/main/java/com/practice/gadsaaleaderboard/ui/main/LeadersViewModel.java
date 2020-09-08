@@ -1,10 +1,7 @@
 package com.practice.gadsaaleaderboard.ui.main;
 
-import com.practice.gadsaaleaderboard.Leader;
-import com.practice.gadsaaleaderboard.LeaderBoardService;
 import com.practice.gadsaaleaderboard.common.Api;
 import com.practice.gadsaaleaderboard.common.schedulers.SchedulerProvider;
-import com.practice.gadsaaleaderboard.ui.common.UIContracts;
 
 import java.util.List;
 
@@ -18,11 +15,11 @@ public class LeadersViewModel extends ViewModel {
     private LeaderRepository repository;
     private SchedulerProvider mSchedulerProvider;
     private CompositeDisposable mDisposable;
-    private UIContracts.View mView;
+    private LeaderContracts.View mView;
 
     public LeadersViewModel() { }
 
-    public void init(UIContracts.View view) {
+    public void init(LeaderContracts.View view) {
         this.mView = view;
         this.mDisposable = new CompositeDisposable();
         this.mSchedulerProvider = SchedulerProvider.get();

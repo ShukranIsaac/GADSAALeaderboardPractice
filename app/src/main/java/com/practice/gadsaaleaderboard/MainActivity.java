@@ -10,6 +10,7 @@ import com.practice.gadsaaleaderboard.ui.ViewModelFactory;
 import com.practice.gadsaaleaderboard.ui.main.LeadersViewModel;
 import com.practice.gadsaaleaderboard.ui.main.LearningFragment;
 import com.practice.gadsaaleaderboard.ui.main.SkillIQFragment;
+import com.practice.gadsaaleaderboard.ui.projectsubmission.ProjectActivity;
 import com.practice.gadsaaleaderboard.ui.splash.SplashActivity;
 
 import androidx.annotation.NonNull;
@@ -22,12 +23,11 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     private LeadersViewModel mViewModel;
-    private MainActivityBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
+        MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
         setSupportActionBar(binding.toolbar);
 
         mViewModel = new ViewModelProvider(this, new ViewModelFactory())
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if (item.getItemId() == R.id.action_submit)
-            startActivity(new Intent(this, SplashActivity.class));
+            startActivity(new Intent(this, ProjectActivity.class));
 
         return super.onOptionsItemSelected(item);
     }

@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard;
+package com.practice.gadsaaleaderboard.ui.main;
 
 import android.os.Parcel;
 
@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.practice.gadsaaleaderboard.ui.common.BaseIdentifiableObject;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -35,6 +36,7 @@ public class Leader extends BaseIdentifiableObject {
 
     @Ignore
     protected Leader(Parcel in) {
+        id = in.readInt();
         name = in.readString();
         uid = in.readString();
         hours = in.readString();
@@ -151,6 +153,7 @@ public class Leader extends BaseIdentifiableObject {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
         dest.writeString(uid);
         dest.writeString(name);
         dest.writeString(hours);

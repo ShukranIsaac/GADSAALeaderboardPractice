@@ -36,8 +36,11 @@
     </style>
 
     <style name="LeaderNameTextAppearance" parent="@android:style/TextAppearance.Material.Medium">
-<!--        <item name="android:textColor">@color/</item>-->
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ProjectTextAppearance" parent="LeaderNameTextAppearance">
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

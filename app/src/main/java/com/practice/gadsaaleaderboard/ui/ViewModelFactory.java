@@ -2,7 +2,8 @@ package com.practice.gadsaaleaderboard.ui;
 
 import com.practice.gadsaaleaderboard.ui.main.LeaderRepository;
 import com.practice.gadsaaleaderboard.ui.main.LeadersViewModel;
-import com.practice.gadsaaleaderboard.ui.main.MainViewModel;
+import com.practice.gadsaaleaderboard.ui.projectsubmission.ProjectRepository;
+import com.practice.gadsaaleaderboard.ui.projectsubmission.ProjectViewModel;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
@@ -16,8 +17,8 @@ public class ViewModelFactory implements BaseViewModelFactory {
     @Override
     @SuppressWarnings("unchecked")
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        if (modelClass.isAssignableFrom(MainViewModel.class)) {
-            return (T) new MainViewModel();
+        if (modelClass.isAssignableFrom(ProjectViewModel.class)) {
+            return (T) new ProjectViewModel(new ProjectRepository());
         } else if (modelClass.isAssignableFrom(LeadersViewModel.class)) {
             return (T) new LeadersViewModel(new LeaderRepository());
         }else {

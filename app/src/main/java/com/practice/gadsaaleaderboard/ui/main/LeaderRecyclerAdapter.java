@@ -7,18 +7,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.practice.gadsaaleaderboard.BaseRecyclerAdapter;
-import com.practice.gadsaaleaderboard.Leader;
-import com.practice.gadsaaleaderboard.OnItemClickListener;
+import com.practice.gadsaaleaderboard.ui.common.BaseRecyclerAdapter;
+import com.practice.gadsaaleaderboard.ui.common.OnItemClickListener;
 import com.practice.gadsaaleaderboard.R;
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
-import timber.log.Timber;
 
 public class LeaderRecyclerAdapter extends BaseRecyclerAdapter<Leader, LeaderRecyclerAdapter.ViewHolder> {
     private static final String TAG = LeaderRecyclerAdapter.class.getSimpleName();
@@ -58,9 +57,11 @@ public class LeaderRecyclerAdapter extends BaseRecyclerAdapter<Leader, LeaderRec
         holder.mTextLeader.setText(leader.name());
         holder.mTextTitle.setText(getTitle(leader));
 
-        // TODO: StrictMode policy violation, Add request user disk permissions
         if (!leader.badgeUrl().isEmpty())
-            Picasso.get().load(leader.badgeUrl()).into(holder.mBadgeUrl);
+            Picasso.get().load(leader.badgeUrl())
+                    .placeholder(Objects.requireNonNull(ResourcesCompat.getDrawable(mContext.getResources(),
+                            R.drawable.certificate_placeholder, null)))
+                    .into(holder.mBadgeUrl);
     }
 
     private String getTitle(Leader leader) {

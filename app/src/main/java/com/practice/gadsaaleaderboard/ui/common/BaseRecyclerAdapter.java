@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard;
+package com.practice.gadsaaleaderboard.ui.common;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;

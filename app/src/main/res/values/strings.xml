@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">Leaderboard</string>
-    <string name="title_activity_main_tabbed">MainTabbedActivity</string>
+    <string name="app_project">Project Submission</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="submit">Submit</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="project_github_link">Project on GITHUB (link)</string>
+    <string name="email_address">Email Address</string>
 </resources>

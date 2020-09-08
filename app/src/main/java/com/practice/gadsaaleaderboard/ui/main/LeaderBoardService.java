@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard;
+package com.practice.gadsaaleaderboard.ui.main;
 
 import java.util.ArrayList;
 

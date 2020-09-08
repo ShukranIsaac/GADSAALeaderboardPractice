@@ -15,8 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.practice.gadsaaleaderboard.Leader;
-import com.practice.gadsaaleaderboard.OnItemClickListener;
+import com.practice.gadsaaleaderboard.ui.common.OnItemClickListener;
 import com.practice.gadsaaleaderboard.R;
 import com.practice.gadsaaleaderboard.databinding.LeadersFragmentBinding;
 import com.practice.gadsaaleaderboard.ui.common.UIContracts;
@@ -24,7 +23,7 @@ import com.practice.gadsaaleaderboard.ui.common.UIContracts;
 import java.util.ArrayList;
 
 public abstract class BaseLeadersFragment extends Fragment
-        implements OnItemClickListener<Leader>, UIContracts.View {
+        implements OnItemClickListener<Leader>, LeaderContracts.View {
     private static final String TAG = BaseLeadersFragment.class.getSimpleName();
     private LeadersViewModel mViewModel;
     private LeadersFragmentBinding mBinding;
