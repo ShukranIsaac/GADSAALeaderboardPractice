@@ -6,17 +6,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.practice.gadsaaleaderboard.databinding.MainActivityBinding;
-import com.practice.gadsaaleaderboard.ui.main.LeadersFragment;
+import com.practice.gadsaaleaderboard.ui.ViewModelFactory;
+import com.practice.gadsaaleaderboard.ui.main.LeadersViewModel;
+import com.practice.gadsaaleaderboard.ui.main.LearningFragment;
+import com.practice.gadsaaleaderboard.ui.main.SkillIQFragment;
 import com.practice.gadsaaleaderboard.ui.splash.SplashActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
+    private LeadersViewModel mViewModel;
     private MainActivityBinding binding;
 
     @Override
@@ -25,17 +30,18 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
         setSupportActionBar(binding.toolbar);
 
-        ViewPager viewPager = binding.viewPager;
-        setViewPager(viewPager);
-        binding.tabs.setupWithViewPager(viewPager);
+        mViewModel = new ViewModelProvider(this, new ViewModelFactory())
+                .get(LeadersViewModel.class);
+
+        binding.tabs.setupWithViewPager(setViewPager(binding.viewPager));
     }
 
-    private void setViewPager(ViewPager viewPager) {
-        // TODO: Fit each tab half the width: only two tabs
+    private ViewPager setViewPager(ViewPager viewPager) {
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
-        pagerAdapter.add("Learning Leaders", LeadersFragment.newInstance());
-        pagerAdapter.add("Skill IQ Leaders", LeadersFragment.newInstance());
+        pagerAdapter.add("Learning Leaders", LearningFragment.newInstance(mViewModel));
+        pagerAdapter.add("Skill IQ Leaders", SkillIQFragment.newInstance(mViewModel));
         viewPager.setAdapter(pagerAdapter);
+        return viewPager;
     }
 
     @Override

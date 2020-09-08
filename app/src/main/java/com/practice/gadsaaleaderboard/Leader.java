@@ -9,8 +9,11 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+import org.jetbrains.annotations.NotNull;
+
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -28,6 +31,9 @@ public class Leader extends BaseIdentifiableObject {
     private String score;
     private String badgeUrl;
 
+    public Leader() { }
+
+    @Ignore
     protected Leader(Parcel in) {
         name = in.readString();
         uid = in.readString();
@@ -37,6 +43,7 @@ public class Leader extends BaseIdentifiableObject {
         badgeUrl = in.readString();
     }
 
+    @Ignore
     protected Leader(Builder builder) {
         this.uid = builder.uid;
         this.name = builder.name;
@@ -178,5 +185,19 @@ public class Leader extends BaseIdentifiableObject {
 
     public void setBadgeUrl(String badgeUrl) {
         this.badgeUrl = badgeUrl;
+    }
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "Leader{" +
+                "id=" + id +
+                ", uid='" + uid + '\'' +
+                ", name='" + name + '\'' +
+                ", hours='" + hours + '\'' +
+                ", country='" + country + '\'' +
+                ", score='" + score + '\'' +
+                ", badgeUrl='" + badgeUrl + '\'' +
+                '}';
     }
 }

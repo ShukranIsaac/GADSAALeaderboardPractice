@@ -10,13 +10,23 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.main.LeadersFragment">
+        tools:context=".ui.main.BaseLeadersFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/list_leader_item"/>
+
+        <ProgressBar
+            android:id="@+id/loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/colorPrimaryDark_424"
+            android:layout_gravity="center"/>
 
     </FrameLayout>
 </layout>

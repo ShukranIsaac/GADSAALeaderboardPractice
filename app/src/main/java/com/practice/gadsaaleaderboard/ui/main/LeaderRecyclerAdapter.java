@@ -18,8 +18,10 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
+import timber.log.Timber;
 
 public class LeaderRecyclerAdapter extends BaseRecyclerAdapter<Leader, LeaderRecyclerAdapter.ViewHolder> {
+    private static final String TAG = LeaderRecyclerAdapter.class.getSimpleName();
     private final Context mContext;
 
     public LeaderRecyclerAdapter(Context context) {
@@ -36,9 +38,7 @@ public class LeaderRecyclerAdapter extends BaseRecyclerAdapter<Leader, LeaderRec
         @Override
         public boolean areContentsTheSame(@NonNull Leader oldItem, @NonNull Leader newItem) {
             return oldItem.name().equalsIgnoreCase(newItem.name()) &&
-                    oldItem.hours().equalsIgnoreCase(newItem.hours()) &&
                     oldItem.getId() == newItem.getId() &&
-                    oldItem.score().equalsIgnoreCase(newItem.score()) &&
                     oldItem.badgeUrl().equalsIgnoreCase(newItem.badgeUrl()) &&
                     oldItem.country().equalsIgnoreCase(newItem.country());
         }
@@ -58,12 +58,13 @@ public class LeaderRecyclerAdapter extends BaseRecyclerAdapter<Leader, LeaderRec
         holder.mTextLeader.setText(leader.name());
         holder.mTextTitle.setText(getTitle(leader));
 
+        // TODO: StrictMode policy violation, Add request user disk permissions
         if (!leader.badgeUrl().isEmpty())
             Picasso.get().load(leader.badgeUrl()).into(holder.mBadgeUrl);
     }
 
     private String getTitle(Leader leader) {
-        return leader.score().isEmpty()
+        return leader.score() == null
                 ? String.format("%s learning hours, %s", leader.hours(), leader.country())
                 : String.format("%s skill IQ score, %s", leader.score(), leader.country());
     }
