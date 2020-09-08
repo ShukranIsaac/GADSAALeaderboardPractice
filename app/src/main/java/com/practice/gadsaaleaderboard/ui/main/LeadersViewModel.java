@@ -11,7 +11,6 @@ import java.util.List;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import io.reactivex.Observable;
 import io.reactivex.disposables.CompositeDisposable;
 
 public class LeadersViewModel extends ViewModel {
@@ -55,6 +54,7 @@ public class LeadersViewModel extends ViewModel {
     }
 
     public void getLeaderBoardSkillIQs() {
+        mView.setLoader(true);
         mDisposable.add(Api.getInstance().create(LeaderBoardService.class)
                 .leaderBoardSkillIQs()
                 .subscribeOn(mSchedulerProvider.io())
