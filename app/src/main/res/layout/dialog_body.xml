@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="100dp"
+    android:padding="10dp"
+    android:background="@drawable/shape_dialog_view">
+
+    <TextView
+        android:id="@+id/dialogText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_margin="32dp"
+        app:layout_constraintBottom_toTopOf="@id/dialogAccept"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dialogAccept"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_button_border"
+        android:text="@string/button_ok"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccentDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_margin="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

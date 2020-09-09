@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard.common;
+package com.practice.gadsaaleaderboard.common.helpers;
 
 public class Constant {
     private Constant() {}

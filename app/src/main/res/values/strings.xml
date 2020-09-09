@@ -8,4 +8,14 @@
     <string name="last_name">Last Name</string>
     <string name="project_github_link">Project on GITHUB (link)</string>
     <string name="email_address">Email Address</string>
+    <string name="button_ok">Yes</string>
+
+    <string name="submission_success">Submission Successful</string>
+    <string name="submission_failure">Submission not Successful</string>
+    <string name="submission_failure_tmessage">Failed to submit project!</string>
+
+    <string name="invalid_email">Email is not valid</string>
+    <string name="invalid_first_name">Firstname is required</string>
+    <string name="invalid_last_name">Lastname is required</string>
+    <string name="invalid_github_link">Github link is required</string>
 </resources>

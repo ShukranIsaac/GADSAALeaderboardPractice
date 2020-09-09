@@ -26,43 +26,34 @@ public final class LeaderPayloadAttr extends BaseIdentifiableObject {
     @PrimaryKey(autoGenerate = true)
     private @JsonIgnore int id;
     private String uid;
+    private String email;
     private String firstName;
     private String lastName;
-    private String personalFone;
-    private String businessName;
-    private String locationOfBusiness;
-    private String businessEmail;
-    private String businessPhone;
-    private String govermentStat;
-    private String additionalInfor;
+    private String track;
+    private String github_link;
+    private String phone;
 
     @Ignore
     protected LeaderPayloadAttr(Parcel in) {
         id = in.readInt();
         uid = in.readString();
+        email = in.readString();
         firstName = in.readString();
         lastName = in.readString();
-        personalFone = in.readString();
-        businessName = in.readString();
-        locationOfBusiness = in.readString();
-        businessEmail = in.readString();
-        businessPhone = in.readString();
-        govermentStat = in.readString();
-        additionalInfor = in.readString();
+        track = in.readString();
+        github_link = in.readString();
+        phone = in.readString();
     }
 
     @Ignore
     public LeaderPayloadAttr(Builder builder) {
         this.uid = builder.uid;
-        this.additionalInfor = builder.additionalInfor;
-        this.businessEmail = builder.businessEmail;
-        this.businessName = builder.businessName;
-        this.businessPhone = builder.businessPhone;
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
-        this.govermentStat = builder.govermentStat;
-        this.personalFone = builder.personalFone;
-        this.locationOfBusiness = builder.locationOfBusiness;
+        this.email = builder.email;
+        this.phone = builder.phone;
+        this.track = builder.track;
+        this.github_link = builder.github_link;
     }
 
     public static Builder builder() {
@@ -86,46 +77,31 @@ public final class LeaderPayloadAttr extends BaseIdentifiableObject {
         return lastName;
     }
 
-    public String additionalInfor() {
-        return additionalInfor;
+    public String email() {
+        return email;
     }
 
-    public String businessEmail() {
-        return businessEmail;
+    public String track() {
+        return track;
     }
 
-    public String personalFone() {
-        return personalFone;
+    public String phone() {
+        return phone;
     }
 
-    public String govermentStat() {
-        return govermentStat;
-    }
-
-    public String businessPhone() {
-        return businessPhone;
-    }
-
-    public String businessName() {
-        return businessName;
-    }
-
-    public String locationOfBusiness() {
-        return locationOfBusiness;
+    public String githubLink() {
+        return github_link;
     }
 
     @JsonPOJOBuilder(withPrefix = "")
     public static class Builder extends BaseIdentifiableObject.Builder<LeaderPayloadAttr.Builder> {
         private String uid;
+        private String email;
         private String firstName;
         private String lastName;
-        private String personalFone;
-        private String businessName;
-        private String locationOfBusiness;
-        private String businessEmail;
-        private String businessPhone;
-        private String govermentStat;
-        private String additionalInfor;
+        private String track;
+        private String phone;
+        private String github_link;
 
         @Override
         public Builder uid(String uid) {
@@ -143,38 +119,23 @@ public final class LeaderPayloadAttr extends BaseIdentifiableObject {
             return this;
         }
 
-        public Builder personalFone(String personalFone) {
-            this.personalFone = personalFone;
+        public Builder email(String email) {
+            this.email = email;
             return this;
         }
 
-        public Builder businessName(String businessName) {
-            this.businessName = businessName;
+        public Builder track(String track) {
+            this.track = track;
             return this;
         }
 
-        public Builder locationOfBusiness(String locationOfBusiness) {
-            this.locationOfBusiness = locationOfBusiness;
+        public Builder phone(String phone) {
+            this.phone = phone;
             return this;
         }
 
-        public Builder businessEmail(String businessEmail) {
-            this.businessEmail = businessEmail;
-            return this;
-        }
-
-        public Builder businessPhone(String businessPhone) {
-            this.businessPhone = businessPhone;
-            return this;
-        }
-
-        public Builder govermentStat(String govermentStat) {
-            this.govermentStat = govermentStat;
-            return this;
-        }
-
-        public Builder additionalInfor(String additionalInfor) {
-            this.additionalInfor = additionalInfor;
+        public Builder githubLink(String github_link) {
+            this.github_link = github_link;
             return this;
         }
 
@@ -204,15 +165,12 @@ public final class LeaderPayloadAttr extends BaseIdentifiableObject {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);
         dest.writeString(uid);
+        dest.writeString(email);
         dest.writeString(firstName);
         dest.writeString(lastName);
-        dest.writeString(personalFone);
-        dest.writeString(businessName);
-        dest.writeString(locationOfBusiness);
-        dest.writeString(businessEmail);
-        dest.writeString(businessPhone);
-        dest.writeString(govermentStat);
-        dest.writeString(additionalInfor);
+        dest.writeString(track);
+        dest.writeString(github_link);
+        dest.writeString(phone);
     }
 
     public void setId(int id) {
@@ -223,6 +181,10 @@ public final class LeaderPayloadAttr extends BaseIdentifiableObject {
         this.uid = uid;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -231,46 +193,29 @@ public final class LeaderPayloadAttr extends BaseIdentifiableObject {
         this.lastName = lastName;
     }
 
-    public void setPersonalFone(String personalFone) {
-        this.personalFone = personalFone;
+    public void setTrack(String track) {
+        this.track = track;
     }
 
-    public void setBusinessName(String businessName) {
-        this.businessName = businessName;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public void setLocationOfBusiness(String locationOfBusiness) {
-        this.locationOfBusiness = locationOfBusiness;
-    }
-
-    public void setBusinessEmail(String businessEmail) {
-        this.businessEmail = businessEmail;
-    }
-
-    public void setBusinessPhone(String businessPhone) {
-        this.businessPhone = businessPhone;
-    }
-
-    public void setGovermentStat(String govermentStat) {
-        this.govermentStat = govermentStat;
-    }
-
-    public void setAdditionalInfor(String additionalInfor) {
-        this.additionalInfor = additionalInfor;
+    public void setGithubLink(String github_link) {
+        this.github_link = github_link;
     }
 
     @Override
     public String toString() {
         return "LeaderPayloadAttr{" +
-                "firstName='" + firstName + '\'' +
+                "id=" + id +
+                ", uid='" + uid + '\'' +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", personalFone='" + personalFone + '\'' +
-                ", businessName='" + businessName + '\'' +
-                ", locationOfBusiness='" + locationOfBusiness + '\'' +
-                ", businessEmail='" + businessEmail + '\'' +
-                ", businessPhone='" + businessPhone + '\'' +
-                ", govermentStat='" + govermentStat + '\'' +
-                ", additionalInfor='" + additionalInfor + '\'' +
+                ", track='" + track + '\'' +
+                ", github_link='" + github_link + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 }

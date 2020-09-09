@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+
+        <variable name="background" type="android.graphics.drawable.Drawable" />
+
+        <variable name="backgroundTint" type="Integer" />
+
+        <variable name="message" type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:padding="10dp"
+        android:background="@drawable/shape_dialog_view">
+
+        <ImageView
+            android:id="@+id/dialogStatus"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="10dp"
+            android:background="@{ background }"
+            android:backgroundTint="@{ backgroundTint }"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/dialogText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="@{ message }"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_margin="32dp"
+            app:layout_constraintTop_toBottomOf="@id/dialogStatus"
+            tools:ignore="HardcodedText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

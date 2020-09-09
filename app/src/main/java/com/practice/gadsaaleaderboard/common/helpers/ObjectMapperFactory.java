@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard.common;
+package com.practice.gadsaaleaderboard.common.helpers;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;

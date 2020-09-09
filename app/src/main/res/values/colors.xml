@@ -10,7 +10,11 @@
     <color name="colorEmpty">#ffeeeeee</color>
     <color name="colorBlack">#ff000000</color>
     <color name="colorPrimaryDark_424">#1b1b1b</color>
+    <color name="colorPrimary_2e7">#2e7d32</color>
     <color name="colorPrimarySplash">#002D59</color>
     <color name="colorPrimarySplashAccent">#001543</color>
     <color name="black_de0">#de000000</color>
+
+    <color name="colorPrimaryRed">#8c2121</color>
+    <color name="colorPrimaryDarkRed">#80100E</color>
 </resources>
