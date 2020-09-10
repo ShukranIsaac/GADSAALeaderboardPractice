@@ -69,8 +69,8 @@ public final class ProjectViewModel extends ViewModel {
                         payloadAttr.lastName(), payloadAttr.github_link())
                 .subscribeOn(mSchedulerProvider.io()).observeOn(mSchedulerProvider.ui())
                 .subscribe(responseBody -> mView.success(), throwable -> {
-                    Toast.makeText(mView.getContext(),
-                            mView.getContext().getString(R.string.submission_failure_tmessage),
+                    Toast.makeText(mView.getContext(), mView.getContext()
+                                    .getString(R.string.submission_failure_tmessage),
                             Toast.LENGTH_LONG).show();
                     mView.failure();
                 })

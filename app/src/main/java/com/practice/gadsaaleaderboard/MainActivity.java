@@ -2,8 +2,6 @@ package com.practice.gadsaaleaderboard;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.practice.gadsaaleaderboard.databinding.MainActivityBinding;
 import com.practice.gadsaaleaderboard.common.viewmodels.ViewModelFactory;
@@ -13,7 +11,6 @@ import com.practice.gadsaaleaderboard.ui.main.LearningFragment;
 import com.practice.gadsaaleaderboard.ui.main.SkillIQFragment;
 import com.practice.gadsaaleaderboard.ui.projectsubmission.ProjectActivity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
@@ -28,12 +25,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
-        setSupportActionBar(binding.toolbar);
 
         mViewModel = new ViewModelProvider(this, new ViewModelFactory())
                 .get(LeadersViewModel.class);
 
         binding.tabs.setupWithViewPager(setViewPager(binding.viewPager));
+
+        binding.submit.setOnClickListener(v -> startActivity(new Intent(this,
+                ProjectActivity.class)));
     }
 
     private ViewPager setViewPager(ViewPager viewPager) {
@@ -42,20 +41,5 @@ public class MainActivity extends AppCompatActivity {
         pagerAdapter.add("Skill IQ Leaders", SkillIQFragment.newInstance(mViewModel));
         viewPager.setAdapter(pagerAdapter);
         return viewPager;
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        if (item.getItemId() == R.id.action_submit)
-            startActivity(new Intent(this, ProjectActivity.class));
-
-        return super.onOptionsItemSelected(item);
     }
 }
