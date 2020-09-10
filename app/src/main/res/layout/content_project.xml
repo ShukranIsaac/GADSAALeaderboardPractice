@@ -109,7 +109,7 @@
             android:hint="@string/project_github_link"
             android:importantForAutofill="no"
             android:nextFocusUp="@id/email_address"
-            android:inputType="textEmailAddress"
+            android:inputType="textUri"
             android:padding="8dp"
             app:layout_constraintEnd_toStartOf="@id/guideline2"
             app:layout_constraintStart_toEndOf="@id/guideline"
