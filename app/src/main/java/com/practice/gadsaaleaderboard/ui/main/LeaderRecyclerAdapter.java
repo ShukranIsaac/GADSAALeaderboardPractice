@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.practice.gadsaaleaderboard.ui.common.adapters.BaseRecyclerAdapter;
 import com.practice.gadsaaleaderboard.ui.common.listeners.OnItemClickListener;
 import com.practice.gadsaaleaderboard.R;
+import com.practice.gadsaaleaderboard.ui.main.models.Leader;
 import com.squareup.picasso.Picasso;
 
 import java.util.Objects;

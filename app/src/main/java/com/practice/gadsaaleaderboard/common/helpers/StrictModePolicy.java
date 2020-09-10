@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard.common;
+package com.practice.gadsaaleaderboard.common.helpers;
 
 import android.os.StrictMode;
 

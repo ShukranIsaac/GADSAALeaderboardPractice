@@ -1,5 +1,7 @@
 package com.practice.gadsaaleaderboard.ui.projectsubmission;
 
+import com.practice.gadsaaleaderboard.ui.projectsubmission.models.LeaderPayloadAttr;
+
 import java.util.List;
 
 import androidx.lifecycle.LiveData;

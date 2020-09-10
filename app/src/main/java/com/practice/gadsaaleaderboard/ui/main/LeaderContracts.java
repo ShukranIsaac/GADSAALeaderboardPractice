@@ -3,6 +3,7 @@ package com.practice.gadsaaleaderboard.ui.main;
 import android.content.Context;
 
 import com.practice.gadsaaleaderboard.ui.common.UIContracts;
+import com.practice.gadsaaleaderboard.ui.main.models.Leader;
 
 import java.util.ArrayList;
 

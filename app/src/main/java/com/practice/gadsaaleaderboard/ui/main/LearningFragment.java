@@ -1,5 +1,7 @@
 package com.practice.gadsaaleaderboard.ui.main;
 
+import com.practice.gadsaaleaderboard.ui.main.models.LeadersViewModel;
+
 public final class LearningFragment extends BaseLeadersFragment {
     public LearningFragment(LeadersViewModel mViewModel) {
         super(mViewModel);

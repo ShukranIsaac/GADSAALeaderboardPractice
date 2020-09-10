@@ -2,9 +2,9 @@ package com.practice.gadsaaleaderboard.common.room;
 
 import android.content.Context;
 
-import com.practice.gadsaaleaderboard.ui.main.Leader;
+import com.practice.gadsaaleaderboard.ui.main.models.Leader;
 import com.practice.gadsaaleaderboard.ui.main.LeaderDao;
-import com.practice.gadsaaleaderboard.ui.projectsubmission.LeaderPayloadAttr;
+import com.practice.gadsaaleaderboard.ui.projectsubmission.models.LeaderPayloadAttr;
 import com.practice.gadsaaleaderboard.ui.projectsubmission.ProjectsDao;
 
 import androidx.annotation.NonNull;

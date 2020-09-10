@@ -1,8 +1,12 @@
-package com.practice.gadsaaleaderboard.ui.main;
+package com.practice.gadsaaleaderboard.ui.main.models;
 
 import com.practice.gadsaaleaderboard.common.Api;
 import com.practice.gadsaaleaderboard.common.room.AppDatabase;
 import com.practice.gadsaaleaderboard.common.schedulers.SchedulerProvider;
+import com.practice.gadsaaleaderboard.ui.main.LeaderBoardService;
+import com.practice.gadsaaleaderboard.ui.main.LeaderContracts;
+import com.practice.gadsaaleaderboard.ui.main.LeaderRepository;
+import com.practice.gadsaaleaderboard.ui.main.models.Leader;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
 package com.practice.gadsaaleaderboard.common.viewmodels;
 
 import com.practice.gadsaaleaderboard.ui.main.LeaderRepository;
-import com.practice.gadsaaleaderboard.ui.main.LeadersViewModel;
+import com.practice.gadsaaleaderboard.ui.main.models.LeadersViewModel;
 import com.practice.gadsaaleaderboard.ui.projectsubmission.ProjectRepository;
-import com.practice.gadsaaleaderboard.ui.projectsubmission.ProjectViewModel;
+import com.practice.gadsaaleaderboard.ui.projectsubmission.models.ProjectViewModel;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;

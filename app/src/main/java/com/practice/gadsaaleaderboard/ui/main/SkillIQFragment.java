@@ -1,5 +1,7 @@
 package com.practice.gadsaaleaderboard.ui.main;
 
+import com.practice.gadsaaleaderboard.ui.main.models.LeadersViewModel;
+
 public final class SkillIQFragment extends BaseLeadersFragment {
     public SkillIQFragment(LeadersViewModel mViewModel) {
         super(mViewModel);

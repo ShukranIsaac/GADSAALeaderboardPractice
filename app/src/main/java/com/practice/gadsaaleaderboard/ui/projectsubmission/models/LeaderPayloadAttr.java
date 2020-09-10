@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard.ui.projectsubmission;
+package com.practice.gadsaaleaderboard.ui.projectsubmission.models;
 
 import android.os.Parcel;
 

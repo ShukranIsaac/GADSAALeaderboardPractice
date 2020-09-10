@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.practice.gadsaaleaderboard.ui.common.listeners.OnItemClickListener;
 import com.practice.gadsaaleaderboard.R;
 import com.practice.gadsaaleaderboard.databinding.LeadersFragmentBinding;
+import com.practice.gadsaaleaderboard.ui.main.models.Leader;
+import com.practice.gadsaaleaderboard.ui.main.models.LeadersViewModel;
 
 import java.util.ArrayList;
 

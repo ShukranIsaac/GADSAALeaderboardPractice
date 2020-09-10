@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard.ui.main;
+package com.practice.gadsaaleaderboard.ui.main.models;
 
 import android.os.Parcel;
 

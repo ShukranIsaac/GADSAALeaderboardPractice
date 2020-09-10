@@ -17,6 +17,8 @@ import com.practice.gadsaaleaderboard.R;
 import com.practice.gadsaaleaderboard.databinding.ActivityProjectBinding;
 import com.practice.gadsaaleaderboard.common.viewmodels.ViewModelFactory;
 import com.practice.gadsaaleaderboard.ui.common.listeners.OnDialogClickListener;
+import com.practice.gadsaaleaderboard.ui.projectsubmission.models.LeaderPayloadAttr;
+import com.practice.gadsaaleaderboard.ui.projectsubmission.models.ProjectViewModel;
 
 import java.util.Objects;
 

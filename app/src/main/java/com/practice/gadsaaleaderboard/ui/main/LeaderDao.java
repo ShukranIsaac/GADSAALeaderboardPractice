@@ -1,5 +1,7 @@
 package com.practice.gadsaaleaderboard.ui.main;
 
+import com.practice.gadsaaleaderboard.ui.main.models.Leader;
+
 import java.util.List;
 
 import androidx.lifecycle.LiveData;

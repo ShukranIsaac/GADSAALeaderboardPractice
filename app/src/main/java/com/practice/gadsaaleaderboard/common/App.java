@@ -3,8 +3,8 @@ package com.practice.gadsaaleaderboard.common;
 import android.content.Context;
 
 import com.facebook.stetho.Stetho;
-import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.practice.gadsaaleaderboard.BuildConfig;
+import com.practice.gadsaaleaderboard.common.helpers.StrictModePolicy;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.multidex.MultiDex;

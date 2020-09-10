@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.practice.gadsaaleaderboard.databinding.MainActivityBinding;
 import com.practice.gadsaaleaderboard.common.viewmodels.ViewModelFactory;
 import com.practice.gadsaaleaderboard.ui.common.adapters.PagerAdapter;
-import com.practice.gadsaaleaderboard.ui.main.LeadersViewModel;
+import com.practice.gadsaaleaderboard.ui.main.models.LeadersViewModel;
 import com.practice.gadsaaleaderboard.ui.main.LearningFragment;
 import com.practice.gadsaaleaderboard.ui.main.SkillIQFragment;
 import com.practice.gadsaaleaderboard.ui.projectsubmission.ProjectActivity;

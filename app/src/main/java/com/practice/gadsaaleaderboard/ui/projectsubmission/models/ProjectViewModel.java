@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard.ui.projectsubmission;
+package com.practice.gadsaaleaderboard.ui.projectsubmission.models;
 
 import android.util.Patterns;
 import android.widget.Toast;
@@ -8,6 +8,10 @@ import com.practice.gadsaaleaderboard.common.Api;
 import com.practice.gadsaaleaderboard.common.helpers.Constant;
 import com.practice.gadsaaleaderboard.common.room.AppDatabase;
 import com.practice.gadsaaleaderboard.common.schedulers.SchedulerProvider;
+import com.practice.gadsaaleaderboard.ui.projectsubmission.ProjectContracts;
+import com.practice.gadsaaleaderboard.ui.projectsubmission.ProjectFormState;
+import com.practice.gadsaaleaderboard.ui.projectsubmission.ProjectRepository;
+import com.practice.gadsaaleaderboard.ui.projectsubmission.SubmitService;
 
 import java.util.List;
 
