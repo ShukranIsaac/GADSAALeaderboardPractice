@@ -2,6 +2,7 @@ package com.practice.gadsaaleaderboard.ui.main;
 
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,10 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.practice.gadsaaleaderboard.ui.common.OnItemClickListener;
+import com.practice.gadsaaleaderboard.ui.common.listeners.OnItemClickListener;
 import com.practice.gadsaaleaderboard.R;
 import com.practice.gadsaaleaderboard.databinding.LeadersFragmentBinding;
-import com.practice.gadsaaleaderboard.ui.common.UIContracts;
 
 import java.util.ArrayList;
 
@@ -67,6 +67,12 @@ public abstract class BaseLeadersFragment extends Fragment
         mViewModel.init(this);
     }
 
+    @Nullable
+    @Override
+    public Context getContext() {
+        return super.getContext();
+    }
+
     @Override
     public void onItemClick(Leader model) {
         Toast.makeText(getContext(), String.format("%s Clicked!",
@@ -94,5 +100,11 @@ public abstract class BaseLeadersFragment extends Fragment
 
     protected LeadersViewModel getViewModel() {
         return mViewModel;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mViewModel.dispose();
     }
 }

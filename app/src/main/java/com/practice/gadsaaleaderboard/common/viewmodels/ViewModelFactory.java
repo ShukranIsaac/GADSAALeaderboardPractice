@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard.ui;
+package com.practice.gadsaaleaderboard.common.viewmodels;
 
 import com.practice.gadsaaleaderboard.ui.main.LeaderRepository;
 import com.practice.gadsaaleaderboard.ui.main.LeadersViewModel;

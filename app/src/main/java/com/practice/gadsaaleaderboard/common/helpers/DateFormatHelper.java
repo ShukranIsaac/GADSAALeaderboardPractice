@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard.ui.common;
+package com.practice.gadsaaleaderboard.common.helpers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

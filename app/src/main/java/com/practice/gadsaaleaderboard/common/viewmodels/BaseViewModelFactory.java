@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard.ui;
+package com.practice.gadsaaleaderboard.common.viewmodels;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;

@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard.ui.common;
+package com.practice.gadsaaleaderboard.ui.common.listeners;
 
 import androidx.appcompat.app.AlertDialog;
 

@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.practice.gadsaaleaderboard.ui.common.BaseRecyclerAdapter;
-import com.practice.gadsaaleaderboard.ui.common.OnItemClickListener;
+import com.practice.gadsaaleaderboard.ui.common.adapters.BaseRecyclerAdapter;
+import com.practice.gadsaaleaderboard.ui.common.listeners.OnItemClickListener;
 import com.practice.gadsaaleaderboard.R;
 import com.squareup.picasso.Picasso;
 

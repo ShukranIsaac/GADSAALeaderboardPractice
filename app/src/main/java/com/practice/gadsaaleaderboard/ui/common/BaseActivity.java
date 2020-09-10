@@ -6,14 +6,13 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Toast;
 
+import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.practice.gadsaaleaderboard.BuildConfig;
 import com.practice.gadsaaleaderboard.R;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.content.ContextCompat;
@@ -22,7 +21,6 @@ import io.reactivex.subjects.BehaviorSubject;
 
 public class BaseActivity extends AppCompatActivity implements BaseContracts.View {
     private BehaviorSubject<Status> lifeCycleObservable = BehaviorSubject.create();
-    private boolean isLoading = false;
 
     public enum Status {
         ON_PAUSE,
@@ -37,6 +35,8 @@ public class BaseActivity extends AppCompatActivity implements BaseContracts.Vie
         if (!BuildConfig.DEBUG)
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
                     WindowManager.LayoutParams.FLAG_SECURE);
+
+        new StethoInterceptor();
 
         super.onCreate(savedInstanceState);
     }
@@ -90,14 +90,6 @@ public class BaseActivity extends AppCompatActivity implements BaseContracts.Vie
         finish();
     }
 
-    public boolean isLoading() {
-        return isLoading;
-    }
-
-    public void setLoading(boolean loading) {
-        isLoading = loading;
-    }
-
     public Observable<Status> observableLifeCycle() {
         return lifeCycleObservable;
     }
@@ -108,32 +100,5 @@ public class BaseActivity extends AppCompatActivity implements BaseContracts.Vie
             if (inputMethodManager != null)
                 inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }
-    }
-
-    @Override
-    public void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showInfoDialog(String title, String message) {
-
-    }
-
-    @Override
-    public AlertDialog showInfoDialog(String title, String message,
-                                      OnDialogClickListener dialogListener) {
-        return null;
-    }
-
-    @Override
-    public void error(Throwable throwable) {
-
-    }
-
-    @Override
-    public AlertDialog showInfoDialog(String title, String message, String positiveButtonText,
-                                      String negativeButtonText, OnDialogClickListener clickListener) {
-        return null;
     }
 }

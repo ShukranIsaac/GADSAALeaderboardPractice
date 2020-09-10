@@ -15,8 +15,8 @@ import android.view.MenuItem;
 
 import com.practice.gadsaaleaderboard.R;
 import com.practice.gadsaaleaderboard.databinding.ActivityProjectBinding;
-import com.practice.gadsaaleaderboard.ui.ViewModelFactory;
-import com.practice.gadsaaleaderboard.ui.common.OnDialogClickListener;
+import com.practice.gadsaaleaderboard.common.viewmodels.ViewModelFactory;
+import com.practice.gadsaaleaderboard.ui.common.listeners.OnDialogClickListener;
 
 import java.util.Objects;
 
@@ -45,6 +45,7 @@ public final class ProjectActivity extends SubmissionAlertDialog implements Proj
             }
 
             mBinding.project.button.setEnabled(projectFormState.isDataValid());
+
             if (projectFormState.getEmailError() != null) {
                 mBinding.project.emailAddress.setError(getString(projectFormState.getEmailError()));
             }

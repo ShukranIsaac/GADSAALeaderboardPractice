@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.practice.gadsaaleaderboard.R;
 import com.practice.gadsaaleaderboard.databinding.DialogStatusBodyBinding;
-import com.practice.gadsaaleaderboard.ui.common.OnDialogClickListener;
+import com.practice.gadsaaleaderboard.ui.common.listeners.OnDialogClickListener;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;

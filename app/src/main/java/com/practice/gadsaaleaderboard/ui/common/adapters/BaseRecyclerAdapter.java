@@ -1,4 +1,6 @@
-package com.practice.gadsaaleaderboard.ui.common;
+package com.practice.gadsaaleaderboard.ui.common.adapters;
+
+import com.practice.gadsaaleaderboard.ui.common.listeners.OnItemClickListener;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;

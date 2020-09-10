@@ -1,4 +1,4 @@
-package com.practice.gadsaaleaderboard.ui.common;
+package com.practice.gadsaaleaderboard.common.models;
 
 import android.os.Parcelable;
 

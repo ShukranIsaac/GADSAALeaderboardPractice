@@ -3,7 +3,7 @@ package com.practice.gadsaaleaderboard.ui.projectsubmission;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
-import com.practice.gadsaaleaderboard.ui.common.OnDialogClickListener;
+import com.practice.gadsaaleaderboard.ui.common.listeners.OnDialogClickListener;
 
 import androidx.appcompat.app.AlertDialog;
 

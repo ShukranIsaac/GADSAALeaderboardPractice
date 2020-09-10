@@ -6,8 +6,12 @@ import android.widget.Toast;
 import com.practice.gadsaaleaderboard.R;
 import com.practice.gadsaaleaderboard.common.Api;
 import com.practice.gadsaaleaderboard.common.helpers.Constant;
+import com.practice.gadsaaleaderboard.common.room.AppDatabase;
 import com.practice.gadsaaleaderboard.common.schedulers.SchedulerProvider;
 
+import java.util.List;
+
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import io.reactivex.disposables.CompositeDisposable;
@@ -40,15 +44,16 @@ public final class ProjectViewModel extends ViewModel {
     }
 
     public void formProjectDataChanged(String email, String firstname, String lastname, String github_link) {
-        if (!isEmailValid(email)) {
-            mFormStateMutableLiveData.setValue(new ProjectFormState(null,
-                    null, R.string.invalid_email, null));
-        } else if (firstname.length() == 0) {
+        if (firstname.length() == 0) {
             mFormStateMutableLiveData.setValue(new ProjectFormState(R.string.invalid_first_name,
                     null, null, null));
         } else if (lastname.length() == 0) {
             mFormStateMutableLiveData.setValue(new ProjectFormState(null,
                     R.string.invalid_last_name, null, null));
+        } else if (!isEmailValid(email)) {
+            mFormStateMutableLiveData.setValue(new ProjectFormState(null,
+                    null, email.length() == 0 ? R.string.invalid_email_re
+                    : R.string.invalid_email, null));
         } else if (github_link.length() == 0) {
             mFormStateMutableLiveData.setValue(new ProjectFormState(null,
                     null, null, R.string.invalid_github_link));
@@ -61,7 +66,7 @@ public final class ProjectViewModel extends ViewModel {
         mDisposable.add(Api.getInstance()
                 .create(Constant.SUBMIT_BASE_URL, SubmitService.class)
                 .submitProject(payloadAttr.email(), payloadAttr.firstName(),
-                        payloadAttr.lastName(), payloadAttr.githubLink())
+                        payloadAttr.lastName(), payloadAttr.github_link())
                 .subscribeOn(mSchedulerProvider.io()).observeOn(mSchedulerProvider.ui())
                 .subscribe(responseBody -> mView.success(), throwable -> {
                     Toast.makeText(mView.getContext(),
@@ -72,8 +77,13 @@ public final class ProjectViewModel extends ViewModel {
         );
     }
 
+    public LiveData<List<LeaderPayloadAttr>> projects() {
+        return AppDatabase.getInstance(mView.getContext())
+                .projects().findAll();
+    }
+
     private boolean isEmailValid(String email) {
-        if (email == null) {
+        if (email.length() == 0) {
             return false;
         }
         return Patterns.EMAIL_ADDRESS.matcher(email).matches();

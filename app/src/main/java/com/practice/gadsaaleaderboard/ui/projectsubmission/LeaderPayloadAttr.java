@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.practice.gadsaaleaderboard.ui.common.BaseIdentifiableObject;
+import com.practice.gadsaaleaderboard.common.models.BaseIdentifiableObject;
 
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -32,6 +32,8 @@ public final class LeaderPayloadAttr extends BaseIdentifiableObject {
     private String track;
     private String github_link;
     private String phone;
+
+    public LeaderPayloadAttr() { }
 
     @Ignore
     protected LeaderPayloadAttr(Parcel in) {
@@ -89,7 +91,7 @@ public final class LeaderPayloadAttr extends BaseIdentifiableObject {
         return phone;
     }
 
-    public String githubLink() {
+    public String github_link() {
         return github_link;
     }
 
@@ -201,7 +203,7 @@ public final class LeaderPayloadAttr extends BaseIdentifiableObject {
         this.phone = phone;
     }
 
-    public void setGithubLink(String github_link) {
+    public void setGithub_link(String github_link) {
         this.github_link = github_link;
     }
 

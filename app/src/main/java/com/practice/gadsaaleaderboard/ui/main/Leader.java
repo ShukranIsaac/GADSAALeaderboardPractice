@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.practice.gadsaaleaderboard.ui.common.BaseIdentifiableObject;
+import com.practice.gadsaaleaderboard.common.models.BaseIdentifiableObject;
 
 import org.jetbrains.annotations.NotNull;
 

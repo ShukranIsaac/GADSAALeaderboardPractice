@@ -1,17 +1,17 @@
 package com.practice.gadsaaleaderboard.ui.main;
 
 import com.practice.gadsaaleaderboard.common.Api;
+import com.practice.gadsaaleaderboard.common.room.AppDatabase;
 import com.practice.gadsaaleaderboard.common.schedulers.SchedulerProvider;
 
 import java.util.List;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import io.reactivex.disposables.CompositeDisposable;
 
 public class LeadersViewModel extends ViewModel {
-    // TODO: Implement the ViewModel, AutoWire the LeaderRepository
+    // TODO: Implement the ViewModel to use the LeaderRepository methods
     private LeaderRepository repository;
     private SchedulerProvider mSchedulerProvider;
     private CompositeDisposable mDisposable;
@@ -44,10 +44,30 @@ public class LeadersViewModel extends ViewModel {
                     mView.setLoader(false);
                     mView.setError(throwable);
                 }));
+
+//        Observable<ArrayList<Leader>> listLeadersHours = Api.getInstance()
+//                .create(LeaderBoardService.class).leaderBoardHours();
+//
+//        Observable<ArrayList<Leader>> listLeadersIQs = Api.getInstance()
+//                .create(LeaderBoardService.class).leaderBoardSkillIQs();
+//
+//        mDisposable.add(Observable.mergeDelayError(listLeadersHours.doOnNext(leaders -> AppDatabase.getInstance(mView.getContext())
+//                        .leaders().insert(leaders)).subscribeOn(mSchedulerProvider.io()),
+//                listLeadersIQs.doOnNext(leaders -> AppDatabase.getInstance(mView.getContext())
+//                        .leaders().insert(leaders))
+//                        .subscribeOn(mSchedulerProvider.io()))
+//                .subscribe(leaders -> {
+//                    mView.setLoader(false);
+//                    mView.setLeaders(leaders);
+//                }, throwable -> {
+//                    mView.setLoader(false);
+//                    mView.setError(throwable);
+//                }));
     }
 
     public LiveData<List<Leader>> leaderBoardHours() {
-        return new MutableLiveData<>();
+        return AppDatabase.getInstance(mView.getContext())
+                .leaders().findAll();
     }
 
     public void getLeaderBoardSkillIQs() {
@@ -62,10 +82,17 @@ public class LeadersViewModel extends ViewModel {
                 }, throwable -> {
                     mView.setLoader(false);
                     mView.setError(throwable);
-                }));
+                })
+        );
     }
 
     public LiveData<List<Leader>> leaderBoardSkillIQs() {
-        return new MutableLiveData<>();
+        return AppDatabase.getInstance(mView.getContext())
+                .leaders().findAll();
+    }
+
+    public void dispose() {
+        if (mDisposable != null)
+            mDisposable.clear();
     }
 }
